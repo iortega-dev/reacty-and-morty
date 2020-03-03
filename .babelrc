@@ -1,0 +1,20 @@
+{
+    "presets": ["react-app"],
+    "plugins": [
+        [
+            "module-resolver",
+            {
+                "root": ".",
+                "alias": {
+                    "~Assets": "./src/app/assets",
+                    "~Components": "./src/app/components",
+                    "~i18n": "./src/app/i18n",
+                    "~Router": "./src/app/router",
+                    "~Store": "./src/app/store",
+                    "~Styles": "./src/app/styles",
+                    "~Views": "./src/app/views"
+                }
+            }
+        ]
+    ]
+}
