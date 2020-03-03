@@ -1,9 +1,10 @@
 // Global imports
 import React from 'react';
 // Local Imports
+import Navbar from '~Components/Navbar';
 
 const App = () => {
-  return <p> hola world</p>;
+  return <Navbar />;
 };
 
 export default App;
