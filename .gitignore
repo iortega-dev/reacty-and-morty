@@ -24,3 +24,5 @@ yarn-error.log*
 
 # Excluding WebStorm idea directory
 .idea
+
+.history
