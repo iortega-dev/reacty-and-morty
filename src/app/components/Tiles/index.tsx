@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import { CardContent } from '@material-ui/core';
-import image from '~Assets/img/rickandmortyimage.jpg';
+import { Character } from '~Types/Character';
+
 import {
   ImageContainer,
   GridImage,
@@ -13,21 +15,30 @@ import {
   CustomPlaceOutlinedIcon,
   CustomMovieIcon,
   CustomStatus,
+  CustomCard
 } from '~Styles/Tiles/Styles';
 
 const Tiles = () => {
-  const elements = Array(9).fill(6);
+  const [apiResponse, setApiResponse] = useState([] as any);
+
+  useEffect(() => {
+    axios
+      .get('https://rickandmortyapi.com/api/character/?page=1')
+      .then(res => setApiResponse(res.data.results));
+  }, []);
+
+  console.log(apiResponse);
 
   return (
     <Grid container spacing={4}>
-      {elements.map((value, index) => (
-        <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
-          <Card>
+      {apiResponse.map((element: Character, index: number) => (
+        <Grid item xs={12} sm={6} md={4} lg={4} xl={4} key={element.id}>
+          <CustomCard>
             <CardContent>
               <Grid item xs={12} sm container direction={'row'}>
                 <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
                   <ImageContainer>
-                    <GridImage src={image} />
+                    <GridImage src={element.image} />
                   </ImageContainer>
                 </Grid>
                 <Grid
@@ -45,20 +56,19 @@ const Tiles = () => {
                     <InformationList>
                       <InformationListElement>
                         <Characteristic>Name: </Characteristic>
-                        Esto es una prueba con un nombre largo
+                        {element.name}
                       </InformationListElement>
                       <InformationListElement>
                         <Characteristic>Status: </Characteristic>
-                        <CustomStatus>Alive</CustomStatus>
+                        <CustomStatus>{element.status}</CustomStatus>
                       </InformationListElement>
                       <InformationListElement>
                         <Characteristic>Gender: </Characteristic>
-                        Male
+                        {element.gender}
                       </InformationListElement>
                       <InformationListElement>
                         <Characteristic>Specie: </Characteristic>
-                        Esto es un nombre de especie algo más largo de lo
-                        esperado
+                        {element.species}
                       </InformationListElement>
                     </InformationList>
                   </Grid>
@@ -81,7 +91,7 @@ const Tiles = () => {
                 </Grid>
               </Grid>
             </CardContent>
-          </Card>
+          </CustomCard>
         </Grid>
       ))}
     </Grid>

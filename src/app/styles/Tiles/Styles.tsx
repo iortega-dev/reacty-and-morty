@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { PlaceOutlined, Movie } from '@material-ui/icons';
+import { Card } from '@material-ui/core';
 
 export const ImageContainer = styled.div`
   margin: auto;
@@ -24,6 +25,7 @@ export const IconsContainer = styled.div`
 `;
 
 export const InformationList = styled.ul`
+  padding-top: 10px;
   padding-left: 15px;
   margin: 0;
 `;
@@ -37,11 +39,11 @@ export const Characteristic = styled.span`
 `;
 
 export const CustomPlaceOutlinedIcon = styled(PlaceOutlined)`
-  color: #1f98a9;
+  color: #1b6470;
 `;
 
 export const CustomMovieIcon = styled(Movie)`
-  color: #1f98a9;
+  color: #1b6470;
   margin-bottom: 10px;
 `;
 
@@ -51,5 +53,9 @@ export const CustomStatus = styled.span`
       ? '#33ac3a'
       : props.children?.toString() === 'Dead'
       ? '#d71a3d'
-      : 'black'};
+      : 'grey'};
+`;
+
+export const CustomCard = styled(Card)`
+  background-color: #fbf0dc;
 `;
