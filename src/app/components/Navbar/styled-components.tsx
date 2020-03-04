@@ -10,7 +10,7 @@ export const ImgWrapper = styled.img`
 export const LogoWrapper = styled.div`
   display: flex;
   padding: 10px;
-  flex: 0 0 230px;
+  flex: 0 1 230px;
 `;
 
 export const ButtonWrapper = styled(Button)`
