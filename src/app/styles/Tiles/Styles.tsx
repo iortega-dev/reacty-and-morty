@@ -44,3 +44,12 @@ export const CustomMovieIcon = styled(Movie)`
   color: #1f98a9;
   margin-bottom: 10px;
 `;
+
+export const CustomStatus = styled.span`
+  color: ${props =>
+    props.children?.toString() === 'Alive'
+      ? '#33ac3a'
+      : props.children?.toString() === 'Dead'
+      ? '#d71a3d'
+      : 'black'};
+`;
