@@ -1,10 +1,16 @@
 // Global imports
 import React from 'react';
 // Local Imports
-import Navbar from '~Components/Navbar';
+import { Navbar } from '~Components/Navbar';
+import { Typography } from '~Assets/fonts';
 
 const App = () => {
-  return <Navbar />;
+  return (
+    <>
+      <Typography />
+      <Navbar />
+    </>
+  );
 };
 
 export default App;
