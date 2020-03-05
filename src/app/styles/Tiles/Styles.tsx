@@ -28,10 +28,20 @@ export const InformationList = styled.ul`
   padding-top: 10px;
   padding-left: 15px;
   margin: 0;
+  list-style: none;
 `;
 
 export const InformationListElement = styled.li`
   padding-bottom: 5px;
+
+  &:before {
+    background-image: url(${props => props.property});
+    background-size: 25px 25px;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    content: '';
+  }
 `;
 
 export const Characteristic = styled.span`

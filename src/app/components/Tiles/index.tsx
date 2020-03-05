@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
 import { CardContent } from '@material-ui/core';
 import { Character } from '~Types/Character';
+import mortyFace from '~Assets/img/morty-ul-v2.png';
 
 import {
   ImageContainer,
@@ -15,9 +15,10 @@ import {
   CustomPlaceOutlinedIcon,
   CustomMovieIcon,
   CustomStatus,
-  CustomCard
+  CustomCard,
 } from '~Styles/Tiles/Styles';
 
+// TODO -> getting the characters list from props.
 const Tiles = () => {
   const [apiResponse, setApiResponse] = useState([] as any);
 
@@ -26,8 +27,6 @@ const Tiles = () => {
       .get('https://rickandmortyapi.com/api/character/?page=1')
       .then(res => setApiResponse(res.data.results));
   }, []);
-
-  console.log(apiResponse);
 
   return (
     <Grid container spacing={4}>
@@ -54,19 +53,19 @@ const Tiles = () => {
                 >
                   <Grid item xs>
                     <InformationList>
-                      <InformationListElement>
+                      <InformationListElement property={mortyFace}>
                         <Characteristic>Name: </Characteristic>
                         {element.name}
                       </InformationListElement>
-                      <InformationListElement>
+                      <InformationListElement property={mortyFace}>
                         <Characteristic>Status: </Characteristic>
                         <CustomStatus>{element.status}</CustomStatus>
                       </InformationListElement>
-                      <InformationListElement>
+                      <InformationListElement property={mortyFace}>
                         <Characteristic>Gender: </Characteristic>
                         {element.gender}
                       </InformationListElement>
-                      <InformationListElement>
+                      <InformationListElement property={mortyFace}>
                         <Characteristic>Specie: </Characteristic>
                         {element.species}
                       </InformationListElement>
