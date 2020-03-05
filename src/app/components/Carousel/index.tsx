@@ -4,7 +4,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import axios from 'axios';
 
-const getRandomIDs = async limit => {
+const getRandomIDs = async (limit: number) => {
   let characterIDs: number[] = [];
   const result = await axios.get('https://rickandmortyapi.com/api/character/');
   while (characterIDs.length < limit) {
@@ -16,19 +16,17 @@ const getRandomIDs = async limit => {
   return characterIDs;
 };
 
-// const getCharacter = (characterID: number) => {
-//   const characterInfo = axios.get(
-//     `https://rickandmortyapi.com/api/character/${characterID}`
-//   );
-//   return characterInfo;
-// };
+const getCharacter = (characterID: number) => {
+  const characterInfo = axios.get(
+    `https://rickandmortyapi.com/api/character/${characterID}`
+  );
+  return characterInfo;
+};
 
 const getCharacterInfos = async (characterIDs: number[]) => {
   let results = await Promise.all(
     characterIDs.map(async (item, index) => {
-      const char = await axios.get(
-        `https://rickandmortyapi.com/api/character/${item}`
-      );
+      const char = getCharacter(item);
       return char;
     })
   );
@@ -61,7 +59,7 @@ const CustomCarousel = () => {
     return <Loader type="Oval" width={500} />;
   }
   return (
-    <Carousel width="25%" infiniteLoop>
+    <Carousel showThumbs={false} width="25%" infiniteLoop>
       {characterInfos.length > 0 &&
         characterInfos.map(item => (
           <div>
