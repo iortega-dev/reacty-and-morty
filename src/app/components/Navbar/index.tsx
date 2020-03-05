@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 import React from 'react';
-import { Container } from '@material-ui/core';
-import {
-  ToolbarWrapper,
-  LogoWrapper,
-  ImgWrapper,
-  MenuItemsWrapper,
-  ButtonWrapper,
-} from './styled-components';
+import { Container, Hidden } from '@material-ui/core';
+import { ToolbarWrapper, LogoWrapper, ImgWrapper } from './styled-components';
+import { NavbarMenu } from '~Components/NavbarMenu';
+import { NavbarMobile } from '~Components/NavbarMobile';
 
 export const Navbar = () => {
   return (
@@ -21,17 +17,12 @@ export const Navbar = () => {
               alt="Reacty & Morty"
             />
           </LogoWrapper>
-          <MenuItemsWrapper>
-            <ButtonWrapper className="white" color="secondary">
-              Inicio
-            </ButtonWrapper>
-            <ButtonWrapper className="white" color="secondary">
-              Capítulos
-            </ButtonWrapper>
-            <ButtonWrapper className="white" color="secondary">
-              Planetas
-            </ButtonWrapper>
-          </MenuItemsWrapper>
+          <Hidden smDown>
+            <NavbarMenu />
+          </Hidden>
+          <Hidden mdUp>
+            <NavbarMobile />
+          </Hidden>
         </ToolbarWrapper>
       </Container>
     </NavbarWrapper>

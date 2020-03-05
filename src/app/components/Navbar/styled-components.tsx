@@ -29,12 +29,6 @@ export const ButtonWrapper = styled(Button)`
   }
 `;
 
-export const MenuItemsWrapper = styled.div`
-  ${ButtonWrapper} {
-    margin-left: 20px;
-  }
-`;
-
 export const ToolbarWrapper = styled(Toolbar)`
   justify-content: space-between;
 `;
