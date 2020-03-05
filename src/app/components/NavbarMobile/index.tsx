@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconButton, Drawer } from '@material-ui/core';
+import { IconButton } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { DrawerWrapper } from './styled-components';
 import { NavbarMenu } from '~Components/NavbarMenu';
