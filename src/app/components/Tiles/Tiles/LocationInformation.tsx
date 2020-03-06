@@ -4,7 +4,6 @@ import { CharacterLocation } from '~Types/Character';
 
 const LocationInformation = (props: { location: CharacterLocation }) => {
   const { location } = props;
-  console.log(location);
   return (
     <CardContent>
       <p>

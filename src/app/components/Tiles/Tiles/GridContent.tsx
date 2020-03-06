@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
-import { CSSTransition } from 'react-transition-group';
 import { CardContent } from '@material-ui/core';
 import { Character } from '~Types/Character';
 import {
+  CardContainer,
   Characteristic,
   CustomCard,
   CustomMovieIcon,
@@ -15,7 +15,6 @@ import {
   InformationList,
   InformationListElement,
 } from '~Styles/Tiles/Styles';
-import '~Styles/Tiles/Transitions.css';
 import mortyFace from '~Assets/img/morty-ul-v2.png';
 import LocationInformation from '~Components/Tiles/Tiles/LocationInformation';
 import EpisodeInformation from '~Components/Tiles/Tiles/EpisodeInformation';
@@ -100,22 +99,16 @@ const GridContent = (props: { element: Character }) => {
           </Grid>
         </CardContent>
       </CustomCard>
-      <CSSTransition
-        in={showLocationList}
-        timeout={300}
-        classNames={'transition'}
-        unmountOnExit
-        onEnter={() => setShowEpisodeList(false)}
-      >
+      <CardContainer property={showLocationList.toString()}>
         <CustomCard className="lower-card border-top-rect">
           <LocationInformation location={element.location} />
         </CustomCard>
-      </CSSTransition>
-      {showEpisodeList && (
+      </CardContainer>
+      <CardContainer property={showEpisodeList.toString()}>
         <CustomCard className="lower-card border-top-rect">
           <EpisodeInformation episodes={element.episode} />
         </CustomCard>
-      )}
+      </CardContainer>
     </Grid>
   );
 };

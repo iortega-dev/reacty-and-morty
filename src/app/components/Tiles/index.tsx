@@ -17,7 +17,7 @@ const Tiles = () => {
   return (
     <Grid container spacing={4}>
       {apiResponse.map((element: Character, index: number) => (
-        <GridContent element={element} />
+        <GridContent element={element} key={element.id} />
       ))}
     </Grid>
   );

@@ -68,9 +68,6 @@ export const CustomStatus = styled.span`
 
 export const CustomCard = styled(Card)`
   background-color: #fbf0dc;
-  &.transition {
-    transition: opacity 300ms ease-in-out;
-  }
   &.lower-card {
     background-color: white;
   }
@@ -82,4 +79,12 @@ export const CustomCard = styled(Card)`
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
+`;
+
+export const CardContainer = styled.div`
+  display: ${props => (props.property === 'true' ? 'block' : 'none')};
+  -moz-transition: opacity 300ms ease-in-out;
+  -o-transition: opacity 300ms ease-in-out;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
 `;
