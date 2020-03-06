@@ -10,7 +10,7 @@ export interface Character {
   origin: object;
   location: object;
   image: string;
-  episode: array<string>;
+  episode: string[];
   url: string;
   created: string;
 }

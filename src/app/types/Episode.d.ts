@@ -3,7 +3,7 @@ export interface Episode {
   name: string;
   type: string;
   dimension: string;
-  residents: array<string>;
+  residents: string[];
   url: string;
   created: string;
 }
