@@ -1,8 +1,8 @@
 import React from 'react';
 import { CardContent } from '@material-ui/core';
-import { Location } from '~Types/Character';
+import { CharacterLocation } from '~Types/Character';
 
-const LocationInformation = (props: { location: Location }) => {
+const LocationInformation = (props: { location: CharacterLocation }) => {
   const { location } = props;
   console.log(location);
   return (

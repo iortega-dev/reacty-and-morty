@@ -1,4 +1,4 @@
-export type Location = {
+export type CharacterLocation = {
   name: string;
   url: string;
 };
@@ -11,5 +11,5 @@ export type Character = {
   status: string;
   image: string;
   episode: Array<string>;
-  location: Location;
+  location: CharacterLocation;
 };
