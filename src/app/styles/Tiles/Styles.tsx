@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { PlaceOutlined, Movie } from '@material-ui/icons';
 import { Card } from '@material-ui/core';
+import { CSSTransition } from 'react-transition-group';
 
 export const ImageContainer = styled.div`
   margin: auto;
@@ -68,4 +69,36 @@ export const CustomStatus = styled.span`
 
 export const CustomCard = styled(Card)`
   background-color: #fbf0dc;
+  &.transition {
+    transition: opacity 300ms ease-in-out;
+  }
+  &.lower-card {
+    background-color: white;
+  }
+  &.border-top-rect {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  &.border-bottom-rect {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+`;
+
+export const CustomCssTransition = styled(CSSTransition)`
+  &.transition-enter {
+    opacity: 0.01;
+  }
+  &.transition-enter.transition-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+  .transition-leave {
+    opacity: 1;
+  }
+
+  .transition-leave.transition-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+  }
 `;
