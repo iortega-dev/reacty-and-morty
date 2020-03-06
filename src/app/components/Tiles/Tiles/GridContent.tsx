@@ -85,6 +85,7 @@ const GridContent = (props: { element: Character }) => {
                   fontSize={'large'}
                   onClick={() => {
                     setShowLocationList(!showLocationList);
+                    showEpisodeList && setShowEpisodeList(false);
                   }}
                 />
                 <CustomMovieIcon
