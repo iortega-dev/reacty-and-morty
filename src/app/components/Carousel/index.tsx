@@ -1,28 +1,29 @@
 import * as React from 'react';
-import Loader from 'react-loader-spinner';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
-import { generateCharactersData } from '~Utils/index';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const CustomCarousel = () => {
-  const [characterInfos, setcharacterInfos] = React.useState<any[]>(
-    [] as any[]
-  );
-  const [isLoadedCarousel, setisLoadedCarousel] = React.useState<boolean>(
-    false
-  );
+  const characterInfos = [
+    {
+      data: {
+        name: 'Rick Sánchez',
+        image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+      },
+    },
+    {
+      data: {
+        name: 'Morty Smith',
+        image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
+      },
+    },
+    {
+      data: {
+        name: 'Summer Smith',
+        image: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
+      },
+    },
+  ];
 
-  React.useEffect(() => {
-    const fetchCarousel = async () => {
-      setcharacterInfos(await generateCharactersData());
-      setisLoadedCarousel(true);
-    };
-    fetchCarousel();
-  }, []);
-
-  if (!isLoadedCarousel) {
-    return <Loader type="Oval" width={500} />;
-  }
   return (
     <Carousel showThumbs={false} width="25%" infiniteLoop>
       {characterInfos.length > 0 &&
