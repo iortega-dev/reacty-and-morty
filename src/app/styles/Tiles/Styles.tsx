@@ -88,3 +88,14 @@ export const CardContainer = styled.div`
   -webkit-transition: opacity 300ms ease-in-out;
   transition: opacity 300ms ease-in-out;
 `;
+
+export const EpisodesContent = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+`;
+
+export const Episode = styled.span`
+  width: 10%;
+  text-align: center;
+`;
