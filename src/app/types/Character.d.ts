@@ -1,5 +1,10 @@
 type Gender = 'Female' | 'Male' | 'Genderless' | 'unkwnown';
 
+export type CharacterLocation = {
+  name: string;
+  url: string;
+};
+
 export interface Character {
   id: number;
   name: string;
@@ -7,8 +12,8 @@ export interface Character {
   species: string;
   type: string;
   gender: Gender;
-  origin: object;
-  location: object;
+  origin: CharacterLocation;
+  location: CharacterLocation;
   image: string;
   episode: string[];
   url: string;
