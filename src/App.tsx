@@ -1,11 +1,10 @@
 // Global imports
 import React from 'react';
-import { Container } from '@material-ui/core';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 // Local Imports
 import { Navbar } from '~Components/Navbar';
 import { Typography } from '~Assets/fonts';
-import { routes } from '~Router/Routes';
+import { Content } from './app/screens/Layout/Content';
 
 const App = () => {
   return (
@@ -13,18 +12,7 @@ const App = () => {
       <Typography />
       <Router>
         <Navbar />
-        <Container>
-          <Switch>
-            {routes.map(route => {
-              return (
-                <Route path={route.path}>
-                  {route.component}
-                </Route>
-              );
-            })}
-            ;
-          </Switch>
-        </Container>
+        <Content />
       </Router>
     </>
   );

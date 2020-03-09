@@ -12,11 +12,16 @@ export const NavbarMenu = ({ className }: NavbarMenuProps) => {
     <MenuItemsWrapper className={className}>
       {routes.map(route => {
         return (
-          <Link to={route.path}>
-            <ButtonWrapper className={'white'} color={'secondary'}>
-              {route.name}
-            </ButtonWrapper>
-          </Link>
+          route.navRoute && (
+            <Link
+              to={route.path}
+              onClick={() => console.log('Click en el enlace')}
+            >
+              <ButtonWrapper className={'white'} color={'secondary'}>
+                {route.name}
+              </ButtonWrapper>
+            </Link>
+          )
         );
       })}
     </MenuItemsWrapper>

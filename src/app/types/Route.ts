@@ -1,5 +1,6 @@
 export type RouteType = {
-  name: string;
+  name?: string;
   path: string;
   component?: any;
+  navRoute: boolean;
 };
