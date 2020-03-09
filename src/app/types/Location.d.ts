@@ -1,9 +1,9 @@
 export interface Location {
   id: number;
   name: string;
-  air_date: string;
-  episode: string;
-  characters: string[];
+  type: string;
+  dimension: string;
+  residents: string[];
   url: string;
   created: string;
 }
