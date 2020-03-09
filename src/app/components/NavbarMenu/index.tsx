@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { MenuItemsWrapper, ButtonWrapper } from './styled-components';
 import { routes } from '~Router/Routes';
 
@@ -8,6 +8,7 @@ type NavbarMenuProps = {
 };
 
 export const NavbarMenu = ({ className }: NavbarMenuProps) => {
+  let location = useLocation();
   return (
     <MenuItemsWrapper className={className}>
       {routes.map(route => {
@@ -15,9 +16,14 @@ export const NavbarMenu = ({ className }: NavbarMenuProps) => {
           route.navRoute && (
             <Link
               to={route.path}
-              onClick={() => console.log('Click en el enlace')}
+              key={`${route.path}-navbar`}
             >
-              <ButtonWrapper className={'white'} color={'secondary'}>
+              <ButtonWrapper
+                className={
+                  location.pathname === route.path ? 'white active' : 'white'
+                }
+                color={'secondary'}
+              >
                 {route.name}
               </ButtonWrapper>
             </Link>

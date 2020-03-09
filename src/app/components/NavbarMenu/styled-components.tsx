@@ -9,7 +9,14 @@ export const ButtonWrapper = styled(Button)`
     span {
       text-shadow: 2px 2px 2px #051123;
     }
+    &.active {
+      color: #1b6470;
+      text-decoration: underline;
+      text-underline-position: under;
+      background-color: transparent;
+    }
     &:hover {
+      color: #1b6470;
       text-decoration: underline;
       text-underline-position: under;
       background-color: transparent;
