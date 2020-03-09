@@ -31,10 +31,14 @@ module.exports = {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
+      typescript: {
+        alwaysTryTypes: true,
+      },
     },
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'import'],
   rules: {
+    'import/no-unresolved': 'error',
     'import/extensions': [
       'error',
       'ignorePackages',
