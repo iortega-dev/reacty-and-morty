@@ -1,15 +1,15 @@
 {
-    "compilerOptions": {
-        "baseUrl": "./",
-        "paths": {
-            "~Assets/*": ["src/app/assets/*"],
-            "~Components/*": ["src/app/components/*"],
-            "~i18n/*": ["src/app/i18n/*"],
-            "~Router/*": ["src/app/router/*"],
-            "~Store/*": ["src/app/store/*"],
-            "~Styles/*": ["src/app/styles/*"],
-            "~Views/*": ["src/app/views/*"],
-            "~Types/*": ["src/app/types/*"]
-        }
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "~Assets/*": ["src/app/assets/*"],
+      "~Components/*": ["src/app/components/*"],
+      "~i18n/*": ["src/app/i18n/*"],
+      "~Router/*": ["src/app/router/*"],
+      "~Store/*": ["src/app/store/*"],
+      "~Styles/*": ["src/app/styles/*"],
+      "~Views/*": ["src/app/views/*"],
+      "~Types/*": ["src/app/types/*"]
     }
+  }
 }
