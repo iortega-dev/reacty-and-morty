@@ -85,6 +85,10 @@ export const CustomCard = styled(Card)`
 
 export const CardContainer = styled.div`
   display: ${props => (props.property === 'true' ? 'block' : 'none')};
+  -moz-transition: opacity 300ms ease-in-out;
+  -o-transition: opacity 300ms ease-in-out;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
 `;
 
 export const EpisodesContent = styled.div`
