@@ -8,7 +8,7 @@ import { NavbarMobile } from '~Components/NavbarMobile';
 
 export const Navbar = () => {
   return (
-    <NavbarWrapper className="rick-primary">
+    <NavbarWrapper className="rick-primary" position="sticky">
       <Container>
         <ToolbarWrapper>
           <LogoWrapper>

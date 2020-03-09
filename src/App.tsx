@@ -4,6 +4,7 @@ import React from 'react';
 import { Navbar } from '~Components/Navbar';
 import { Typography } from '~Assets/fonts';
 import CustomCarousel from '~Components/Carousel';
+import CustomSearch from '~Components/SearchBar';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Typography />
       <Navbar />
       <CustomCarousel />
+      <CustomSearch type="character" />
     </>
   );
 };
