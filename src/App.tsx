@@ -1,10 +1,16 @@
 // Global imports
 import React from 'react';
 // Local Imports
-import Tiles from '~Components/Tiles';
+import { Navbar } from '~Components/Navbar';
+import { Typography } from '~Assets/fonts';
 
 const App = () => {
-  return <Tiles />;
+  return (
+    <>
+      <Typography />
+      <Navbar />
+    </>
+  );
 };
 
 export default App;
