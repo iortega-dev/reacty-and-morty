@@ -13,6 +13,7 @@
           "~Router": "./src/app/router",
           "~Store": "./src/app/store",
           "~Styles": "./src/app/styles",
+          "~Types": "./src/app/types",
           "~Views": "./src/app/views"
         }
       }
