@@ -12,7 +12,8 @@
           "~Router": "./src/app/router",
           "~Store": "./src/app/store",
           "~Styles": "./src/app/styles",
-          "~Views": "./src/app/views"
+          "~Views": "./src/app/views",
+          "~Types": "./src/app/types"
         }
       }
     ]
