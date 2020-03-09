@@ -13,7 +13,8 @@
           "~Store": "./src/app/store",
           "~Styles": "./src/app/styles",
           "~Views": "./src/app/views",
-          "~Types": "./src/app/types"
+          "~Types": "./src/app/types",
+          "~Screens": "./src/app/screens"
         }
       }
     ]

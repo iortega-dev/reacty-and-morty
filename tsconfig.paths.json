@@ -9,6 +9,7 @@
       "~Store/*": ["src/app/store/*"],
       "~Styles/*": ["src/app/styles/*"],
       "~Views/*": ["src/app/views/*"],
+      "~Screens/*": ["src/app/screens/*"],
       "~Types/*": ["src/app/types/*"]
     }
   }
