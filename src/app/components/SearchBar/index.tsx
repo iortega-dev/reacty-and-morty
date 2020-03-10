@@ -1,15 +1,16 @@
 import * as React from 'react';
+import { DebounceInput } from 'react-debounce-input';
 import styled from 'styled-components';
 import { API } from '~Api';
 
 const CustomSearch = props => {
   const [searchText, setSearchText] = React.useState('');
-  const [results, setResults] = React.useState<any>([]);
+  const [results, setResults] = React.useState<Array<Record<string, any>>>([]);
   const { type } = props;
   const provider = new API(type);
 
   React.useEffect(() => {
-    if (searchText.length > 0) {
+    if (searchText.length > 1) {
       const getChars = async () => {
         const res = await provider.getAll({ name: searchText });
         setResults(res.results);
@@ -22,7 +23,9 @@ const CustomSearch = props => {
 
   const renderResults = () => {
     const names = results.map(item => {
-      return <CustomImg alt={item.name} src={item.image} key={item.id} />;
+      return (
+        <CustomImg alt={item['name']} src={item['image']} key={item['id']} />
+      );
     });
     return names;
   };
@@ -30,8 +33,11 @@ const CustomSearch = props => {
   return (
     <>
       <CustomInput
+        minLength={2}
+        debounceTimeout={800}
         placeholder="Buscar..."
-        onChange={(event: any) => {
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+          console.log(event);
           setSearchText(event.target.value);
         }}
       />
@@ -40,7 +46,7 @@ const CustomSearch = props => {
   );
 };
 
-const CustomInput = styled.input`
+const CustomInput = styled(DebounceInput)`
   background: #add4e8;
   border-radius: 10px;
   margin-top: 10px;
