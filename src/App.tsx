@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 // Local Imports
 import { Navbar } from '~Components/Navbar';
 import { Typography } from '~Assets/fonts';
-import { Content } from '~Screens/Layout/Content';
+import { Content } from '~Components/Layout/Content';
 
 const App = () => {
   return (
