@@ -2,19 +2,19 @@ import * as React from 'react';
 import { DebounceInput } from 'react-debounce-input';
 import styled from 'styled-components';
 import { API } from '~Api';
-import Loader from 'react-loader-spinner';
 
 const CharacterSearcher = () => {
   const [searchText, setSearchText] = React.useState('');
   const [results, setResults] = React.useState<Array<Record<string, any>>>([]);
   const provider = new API('character');
 
+  const getChars = async () => {
+    const res = await provider.getAll({ name: searchText });
+    setResults(res.results);
+  };
+
   React.useEffect(() => {
     if (searchText.length > 1) {
-      const getChars = async () => {
-        const res = await provider.getAll({ name: searchText });
-        setResults(res.results);
-      };
       getChars();
     } else {
       setResults([]);

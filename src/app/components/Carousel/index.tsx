@@ -4,18 +4,23 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styled from 'styled-components';
 
-const CustomCarousel = () => {
-  const [characterInfos, setCharacterInfos] = React.useState<any>([]);
+const getRandomIDs = () => {
+  let characterIDs: number[] = [];
   const limit = 5;
   const count = 400;
-  let characterIDs: number[] = [];
   while (characterIDs.length < limit) {
     const number: number = Math.floor(Math.random() * count) + 1;
     if (!characterIDs.includes(number)) {
       characterIDs.push(number);
     }
   }
+  return characterIDs;
+};
+
+const CustomCarousel = () => {
+  const [characterInfos, setCharacterInfos] = React.useState<any>([]);
   const characterProvider = new API('character');
+  const characterIDs = getRandomIDs();
   React.useEffect(() => {
     const getCharacterInfos = async () => {
       const res = await characterProvider.getMultiple(characterIDs);
