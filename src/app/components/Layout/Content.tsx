@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container } from '@material-ui/core';
 import { Route, Switch } from 'react-router-dom';
-import { routes } from '~Router/Routes';
 import styled from 'styled-components';
+import { routes } from '~Router/Routes';
 
 export const Content = () => {
   return (

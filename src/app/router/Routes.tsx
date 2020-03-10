@@ -1,6 +1,9 @@
 import { RouteType } from '~Types/Route';
-import Tiles from '~Components/Tiles';
-import CustomCarousel from '~Components/Carousel';
+// Views import
+import { Characters } from '~Views/Characters';
+import { Home } from '~Views/Home';
+import { Episodes } from '~Views/Episodes';
+import { Locations } from '~Views/Locations';
 
 /**
  * ELEMENTS IN ARRAY:
@@ -16,23 +19,25 @@ export const routes: Array<RouteType> = [
   {
     name: 'Inicio',
     path: '/',
-    component: CustomCarousel,
+    component: Home,
     navRoute: true,
   },
   {
     name: 'Personajes',
     path: '/personajes',
-    component: Tiles,
+    component: Characters,
     navRoute: true,
   },
   {
-    name: 'Capítulos',
-    path: '/capitulos',
+    name: 'Episodios',
+    path: '/episodios',
+    component: Episodes,
     navRoute: true,
   },
   {
-    name: 'Planetas',
-    path: '/planetas',
+    name: 'Localizaciones',
+    path: '/localizaciones',
+    component: Locations,
     navRoute: true,
   },
 ];
