@@ -18,7 +18,6 @@ export const Content = () => {
             />
           );
         })}
-        ;
       </Switch>
     </CustomContainer>
   );

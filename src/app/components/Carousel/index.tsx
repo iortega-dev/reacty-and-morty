@@ -1,40 +1,50 @@
 import * as React from 'react';
+import { API } from '~Api';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import styled from 'styled-components';
 
 const CustomCarousel = () => {
-  const characterInfos = [
-    {
-      data: {
-        name: 'Rick Sánchez',
-        image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-      },
-    },
-    {
-      data: {
-        name: 'Morty Smith',
-        image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-      },
-    },
-    {
-      data: {
-        name: 'Summer Smith',
-        image: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
-      },
-    },
-  ];
+  const [characterInfos, setCharacterInfos] = React.useState<any>([]);
+  const limit = 5;
+  const count = 400;
+  let characterIDs: number[] = [];
+  while (characterIDs.length < limit) {
+    const number: number = Math.floor(Math.random() * count) + 1;
+    if (!characterIDs.includes(number)) {
+      characterIDs.push(number);
+    }
+  }
+  const characterProvider = new API('character');
+  React.useEffect(() => {
+    const getCharacterInfos = async () => {
+      const res = await characterProvider.getMultiple(characterIDs);
+      setCharacterInfos(res);
+    };
+    getCharacterInfos();
+  }, []);
 
   return (
-    <Carousel showThumbs={false} width="25%" infiniteLoop>
+    <StyledCarousel autoPlay showThumbs={false} infiniteLoop>
       {characterInfos.length > 0 &&
         characterInfos.map(item => (
-          <div>
-            <img src={item.data.image} alt="slide" />
-            <p className="legend">{item.data.name}</p>
+          <div key={item.id}>
+            <img src={item.image} alt="slide" />
+            <p className="legend">{item.name}</p>
           </div>
         ))}
-    </Carousel>
+    </StyledCarousel>
   );
 };
+
+const StyledCarousel = styled(Carousel)`
+  width: 25%;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+`;
 
 export default CustomCarousel;
