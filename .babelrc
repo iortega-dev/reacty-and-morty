@@ -7,14 +7,15 @@
         "root": ".",
         "alias": {
           "~Assets": "./src/app/assets",
+          "~Api": "./src/app/api",
           "~Components": "./src/app/components",
           "~i18n": "./src/app/i18n",
           "~Router": "./src/app/router",
           "~Store": "./src/app/store",
           "~Styles": "./src/app/styles",
           "~Views": "./src/app/views",
-          "~Types": "./src/app/types",
-          "~Screens": "./src/app/screens"
+          "~Screens": "./src/app/screens",
+          "~Types": "./src/app/types"
         }
       }
     ]
