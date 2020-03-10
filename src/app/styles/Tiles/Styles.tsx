@@ -67,7 +67,9 @@ export const CustomStatus = styled.span`
 `;
 
 export const CustomCard = styled(Card)`
-  background-color: #fbf0dc;
+  &.card {
+    background-color: #fbf0dc;
+  }
   &.lower-card {
     background-color: white;
   }

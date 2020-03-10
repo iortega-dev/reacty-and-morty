@@ -37,7 +37,9 @@ const GridContent = (props: { element: Character }) => {
     >
       <CustomCard
         className={
-          showEpisodeList || showLocationList ? 'border-bottom-rect' : ''
+          showEpisodeList || showLocationList
+            ? 'card border-bottom-rect'
+            : 'card'
         }
       >
         <CardContent>

@@ -1,16 +1,19 @@
 // Global imports
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 // Local Imports
 import { Navbar } from '~Components/Navbar';
 import { Typography } from '~Assets/fonts';
-import CustomCarousel from '~Components/Carousel';
+import { Content } from '~Screens/Layout/Content';
 
 const App = () => {
   return (
     <>
       <Typography />
-      <Navbar />
-      <CustomCarousel />
+      <Router>
+        <Navbar />
+        <Content />
+      </Router>
     </>
   );
 };

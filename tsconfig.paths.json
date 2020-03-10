@@ -9,6 +9,7 @@
       "~Router/*": ["src/app/router/*"],
       "~Store/*": ["src/app/store/*"],
       "~Styles/*": ["src/app/styles/*"],
+      "~Screens/*": ["src/app/screens/*"],
       "~Types/*": ["src/app/types/*"],
       "~Views/*": ["src/app/views/*"]
     }
