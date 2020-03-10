@@ -2,12 +2,12 @@ import * as React from 'react';
 import { DebounceInput } from 'react-debounce-input';
 import styled from 'styled-components';
 import { API } from '~Api';
+import Loader from 'react-loader-spinner';
 
-const CustomSearch = props => {
+const CharacterSearcher = () => {
   const [searchText, setSearchText] = React.useState('');
   const [results, setResults] = React.useState<Array<Record<string, any>>>([]);
-  const { type } = props;
-  const provider = new API(type);
+  const provider = new API('character');
 
   React.useEffect(() => {
     if (searchText.length > 1) {
@@ -37,7 +37,6 @@ const CustomSearch = props => {
         debounceTimeout={800}
         placeholder="Buscar..."
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-          console.log(event);
           setSearchText(event.target.value);
         }}
       />
@@ -70,4 +69,4 @@ const CustomDiv = styled.div`
   justify-content: center;
 `;
 
-export default CustomSearch;
+export default CharacterSearcher;
