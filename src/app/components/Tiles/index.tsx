@@ -43,6 +43,13 @@ const Tiles = () => {
         url: 'https://rickandmortyapi.com/api/location/20',
       },
       image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+      type: '',
+      origin: {
+        name: 'Earth (Replacement Dimension)',
+        url: 'https://rickandmortyapi.com/api/location/20',
+      },
+      url: '',
+      created: ''
     },
     {
       id: 1,
@@ -67,6 +74,13 @@ const Tiles = () => {
         url: 'https://rickandmortyapi.com/api/location/20',
       },
       image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+      type: '',
+      origin: {
+        name: 'Earth (Replacement Dimension)',
+        url: 'https://rickandmortyapi.com/api/location/20',
+      },
+      url: '',
+      created: ''
     },
     {
       id: 1,
@@ -89,6 +103,13 @@ const Tiles = () => {
         url: 'https://rickandmortyapi.com/api/location/20',
       },
       image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+      type: '',
+      origin: {
+        name: 'Earth (Replacement Dimension)',
+        url: 'https://rickandmortyapi.com/api/location/20',
+      },
+      url: '',
+      created: ''
     },
     {
       id: 1,
@@ -134,6 +155,13 @@ const Tiles = () => {
         url: 'https://rickandmortyapi.com/api/location/20',
       },
       image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+      type: '',
+      origin: {
+        name: 'Earth (Replacement Dimension)',
+        url: 'https://rickandmortyapi.com/api/location/20',
+      },
+      url: '',
+      created: ''
     },
   ];
 
