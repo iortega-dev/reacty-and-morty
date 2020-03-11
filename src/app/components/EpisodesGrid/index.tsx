@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import { Tooltip, Fade } from '@material-ui/core';
+import { Tooltip, Modal } from '@material-ui/core';
 import { Pagination } from '@material-ui/lab';
 import { API } from '~Api';
-import { Episode } from '~Types/Episode';
+import { EpisodeInitialState, Episode } from '~Types/Episode';
+
 import {
   EpisodeGridCell,
   EpisodesGridContainer,
   RowCentered,
   AbsoluteLoading,
 } from './styled-components';
+import { EpisodeInfo } from '~Components/EpisodeInfo';
 
 export const EpisodesGrid = () => {
   const episodesProvider = new API('episode');
   const [loading, setLoading] = useState(true);
   const [episodes, setEpisodes] = useState<Episode[]>([]);
+  const [selectedEpisode, setSelectedEpisode] = useState<Episode>(
+    EpisodeInitialState
+  );
   const [page, setPage] = useState(1);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     getAllEpisodes();
@@ -30,10 +36,23 @@ export const EpisodesGrid = () => {
     }
   };
 
+  const openEpisode = eSelected => {
+    setSelectedEpisode(eSelected);
+    handleOpen();
+  };
+
   const handleChange = (event, value) => {
     setLoading(true);
     setPage(value);
     getAllEpisodes(value);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
 
   return (
@@ -63,13 +82,16 @@ export const EpisodesGrid = () => {
                   key={episode.id}
                 >
                   <Tooltip title={`Episodio ${episode.id}`}>
-                    <span>{episode.id}</span>
+                    <span onClick={() => openEpisode(episode)}>{episode.id}</span>
                   </Tooltip>
                 </EpisodeGridCell>
               )
           )}
         </EpisodesGridContainer>
       )}
+      <Modal open={open} onClose={handleClose}>
+        <EpisodeInfo selectedEpisode={selectedEpisode} />
+      </Modal>
     </>
   );
 };
