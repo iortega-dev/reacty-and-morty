@@ -1,5 +1,10 @@
 import React from 'react';
+import { EpisodesGrid } from '~Components/EpisodesGrid';
 
 export const Episodes = () => {
-  return <h1>EPISODIOS</h1>;
+  return (
+    <>
+      <EpisodesGrid />
+    </>
+  );
 };
