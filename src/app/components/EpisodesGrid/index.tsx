@@ -20,9 +20,9 @@ export const EpisodesGrid = () => {
     getAllEpisodes();
   }, []);
 
-  const getAllEpisodes = async (page = 1) => {
+  const getAllEpisodes = async (currentPage = 1) => {
     try {
-      const result = await episodesProvider.getAll({ page });
+      const result = await episodesProvider.getAll({ currentPage });
       setEpisodes(result.results);
       setLoading(false);
     } catch (error) {
