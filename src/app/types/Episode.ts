@@ -7,3 +7,13 @@ export interface Episode {
   url: string;
   created: string;
 }
+
+export const EpisodeInitialState: Episode = {
+  id: 0,
+  name: '',
+  air_date: '',
+  episode: '',
+  characters: [''],
+  url: '',
+  created: '',
+};
