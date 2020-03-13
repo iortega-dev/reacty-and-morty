@@ -4,7 +4,7 @@ import './index.css';
 // import App from './app/App';
 import { Provider } from 'react-redux';
 import App from './App';
-import { store } from '~Store/index.d.ts'; // Check with Alexis
+import { store } from '~Store/index'; // Check with Alexis
 
 ReactDOM.render(
   <Provider store={store}>
