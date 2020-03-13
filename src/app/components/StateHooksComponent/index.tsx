@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { InitialState } from '~Store/Reducer/root-reducer';
 import { StateProps } from '~Types/StateProps';
@@ -22,8 +22,12 @@ const StateHooksComponent = () => {
     <>
       <div>State Hooks Component - Part 2</div>
       <form>
-        <input type="text" placeholder="name" />
-        <input type="text" placeholder="address" />
+        <input type="text" placeholder="name" value={name} onChange={(e: ChangeEvent<HTMLInputElement>) => {
+          rootDispatcher.updateName(e.target.value)
+        }} />
+        <input type="text" placeholder="address" value={address} onChange={(e: ChangeEvent<HTMLInputElement>) => {
+          rootDispatcher.updateAddress(e.target.value)
+        }} />
         <button type="submit">Submit</button>
       </form>
     </>
