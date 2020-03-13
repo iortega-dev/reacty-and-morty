@@ -23,13 +23,13 @@ module.exports = {
     sourceType: 'module',
   },
   settings: {
-    'import/extensions': ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
+    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
     'import/parsers': {
-      '@typescript-eslint/parser': ['.d.ts', '.ts', '.tsx'],
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
       typescript: {
         alwaysTryTypes: true,
@@ -45,8 +45,9 @@ module.exports = {
       {
         js: 'never',
         jsx: 'never',
-        // ts: 'never', // check w/ Alexis
+        ts: 'never', // check w/ Alexis
         tsx: 'never',
+        'd.ts': never,
       },
     ],
     'global-require': 0,
