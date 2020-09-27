@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import * as React from 'react';
 import { DebounceInput } from 'react-debounce-input';
 import styled from 'styled-components';
@@ -23,9 +24,7 @@ const CharacterSearcher = () => {
 
   const renderResults = () => {
     const names = results.map(item => {
-      return (
-        <CustomImg alt={item['name']} src={item['image']} key={item['id']} />
-      );
+      return <CustomImg alt={item.name} src={item.image} key={item.id} />;
     });
     return names;
   };

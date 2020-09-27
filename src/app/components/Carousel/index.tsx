@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import * as React from 'react';
-import { API } from '~Api';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styled from 'styled-components';
+import { Carousel } from 'react-responsive-carousel';
+import { API } from '~Api';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const getRandomIDs = () => {
   let characterIDs: number[] = [];
@@ -27,7 +28,7 @@ const CustomCarousel = () => {
       setCharacterInfos(res);
     };
     getCharacterInfos();
-  }, []);
+  }, [characterIDs, characterProvider]);
 
   return (
     <StyledCarousel autoPlay showThumbs={false} infiniteLoop>

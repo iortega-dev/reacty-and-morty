@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { Tooltip, Modal } from '@material-ui/core';
 import { Pagination } from '@material-ui/lab';
@@ -22,10 +23,6 @@ export const EpisodesGrid = () => {
   const [page, setPage] = useState(1);
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    getAllEpisodes();
-  }, []);
-
   const getAllEpisodes = async (currentPage = 1) => {
     try {
       const result = await episodesProvider.getAll({ currentPage });
@@ -35,6 +32,10 @@ export const EpisodesGrid = () => {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    getAllEpisodes();
+  }, [getAllEpisodes]);
 
   const openEpisode = eSelected => {
     setSelectedEpisode(eSelected);
@@ -82,7 +83,9 @@ export const EpisodesGrid = () => {
                   key={episode.id}
                 >
                   <Tooltip title={`Episodio ${episode.id}`}>
-                    <span onClick={() => openEpisode(episode)}>{episode.id}</span>
+                    <span onClick={() => openEpisode(episode)}>
+                      {episode.id}
+                    </span>
                   </Tooltip>
                 </EpisodeGridCell>
               )
